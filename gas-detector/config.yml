@@ -1,0 +1,8 @@
+name: tuya-gas-detector-tze284-chbyv06x
+packageKey: tuya-gas-detector-tze284-chbyv06x
+permissions:
+  zigbee: {}
+metadata:
+  deviceType: Sensor
+  ocfDeviceType: oic.d.smokesensor
+  deviceTypeId: SmokeDetector

@@ -1,0 +1,6 @@
+zigbeeManufacturer:
+  - id: "Tuya Gas Detector TZE284"
+    deviceLabel: "Natural Gas Sensor"
+    manufacturer: "_TZE284_chbyv06x"
+    model: "TS0601"
+    deviceProfileName: gas-detector
