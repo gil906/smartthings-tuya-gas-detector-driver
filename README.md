@@ -1,5 +1,7 @@
 # SmartThings Edge Driver — Tuya Natural Gas Sensor (`_TZE284_chbyv06x` / TS0601)
 
+![Natural Gas Sensor Zigbee — installed](https://github.com/user-attachments/assets/e01942a0-9fc7-4b9a-9ec2-528aba27a71b)
+
 A working, **field-verified** SmartThings Edge driver for the Tuya Zigbee natural
 gas sensor identified as manufacturer `_TZE284_chbyv06x`, model `TS0601`. This
 device uses Tuya's proprietary `0xEF00` Zigbee cluster instead of any standard
@@ -45,6 +47,10 @@ peak) as a detection, mapped to the standard `smokeDetector` capability
 (SmartThings has no separate "natural gas" capability, so this is the closest
 correct fit — same pattern used by other published Tuya gas/smoke drivers).
 
+A real-world test also confirmed the sensor's own hardware alarm (DP1) correctly
+tripped and latched during a stronger/sustained exposure, matching the physical
+unit's beeping — the driver reported "detected" in SmartThings at the same moment.
+
 ## Files
 
 - `gas-detector/config.yml` — driver metadata, permissions, device type
@@ -64,16 +70,15 @@ smartthings edge:drivers:install --hub <your-hub-id> --channel <your-channel-id>
 
 ## The physical device
 
-This driver targets the Tuya Zigbee natural gas sensor sold under various
-generic/white-label brand names on AliExpress and similar marketplaces,
+This driver targets the **DYGSM Alarm System** Tuya Zigbee natural gas sensor,
 identifying itself over Zigbee as manufacturer `_TZE284_chbyv06x`, model
-`TS0601`. Listings for this exact manufacturer ID move often and aren't
-consistently linkable — **search AliExpress for "Tuya Zigbee TS0601 natural
-gas sensor"** and check the listing's spec sheet or a teardown/pairing photo
-for `_TZE284_chbyv06x` before buying, to make sure you're getting a unit this
-driver actually matches. (A product photo and a stable direct listing link
-weren't available to include reliably at publish time — happy to add both
-here if a durable link turns up.)
+`TS0601`. Works with the Tuya/SmartLife app natively, but this repo gives it
+a real dedicated SmartThings Edge driver instead of a generic fallback.
+
+![DYGSM Zigbee Natural Gas Sensor listing](https://github.com/user-attachments/assets/76794772-c979-4266-a21b-ebe677334f4f)
+
+**Buy it here:** [Tuya Zigbee Smart Natural Gas Sensor — DYGSM Smart Store (AliExpress)](https://a.aliexpress.com/_mtLwEFd)
+(requires a Zigbee hub — SmartThings, Home Assistant + ZHA/Zigbee2MQTT, etc.)
 
 ## Disclaimer
 
